@@ -35,6 +35,7 @@ import (
 	"go.opentelemetry.io/otel/exporters/otlp/otlpgrpc"
 	metricglobal "go.opentelemetry.io/otel/metric/global"
 	"go.opentelemetry.io/otel/propagation"
+	export "go.opentelemetry.io/otel/sdk/export/metric"
 	controller "go.opentelemetry.io/otel/sdk/metric/controller/basic"
 	processor "go.opentelemetry.io/otel/sdk/metric/processor/basic"
 	selector "go.opentelemetry.io/otel/sdk/metric/selector/simple"
@@ -365,6 +366,7 @@ func newExporter(accessToken, endpoint string, insecure bool) (*otlp.Exporter, e
 			otlpgrpc.WithHeaders(headers),
 			otlpgrpc.WithCompressor(gzip.Name),
 		),
+		otlp.WithMetricExportKindSelector(export.StatelessExportKindSelector()),
 	)
 }
 

@@ -15,6 +15,7 @@ require (
 	go.opentelemetry.io/otel/exporters/otlp v0.18.0
 	go.opentelemetry.io/otel/metric v0.18.0
 	go.opentelemetry.io/otel/sdk v0.18.0
+	go.opentelemetry.io/otel/sdk/export/metric v0.18.0 // indirect
 	go.opentelemetry.io/otel/sdk/metric v0.18.0
 	go.opentelemetry.io/otel/trace v0.18.0
 	golang.org/x/net v0.0.0-20210119194325-5f4716e94777 // indirect
